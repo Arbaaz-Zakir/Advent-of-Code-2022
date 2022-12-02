@@ -31,62 +31,65 @@ public class day2 {
 
 	}
 	
-	static int score(char opponentsMove, char myMove) {
-		char A = 'A'; //rock
-		char B = 'B'; // paper
-		char C = 'C'; // scissors
-		
-		char X = 'X'; // rock
-		char Y = 'Y'; // paper
-		char Z = 'Z'; // scissors
-		
-		int loss = 0;
-		int tie = 3;
-		int win = 6;
-		
-		int result = 0;
-		
-		if(opponentsMove == A && myMove == X) {
-			result += tie + 1;
-			System.out.println(result);
-		}
-		else if (opponentsMove == A && myMove == Y) {
-			result += win + 2;
-			System.out.println(result);
-		}
-		else if (opponentsMove == A && myMove == Z) {
-			result += loss + 3;
-			System.out.println(result);
-		}
-		else if (opponentsMove == B && myMove == X) {
-			result += loss + 1;
-			System.out.println(result);
-		}
-		else if (opponentsMove == B && myMove == Y) {
-			result += tie + 2;
-			System.out.println(result);
-		}
-		else if (opponentsMove == B && myMove == Z) {
-			result += win + 3;
-			System.out.println(result);
-		}
-		else if (opponentsMove == C && myMove == X) {
-			result += win + 1;
-			System.out.println(result);
-		}
-		else if (opponentsMove == C && myMove == Y) {
-			result += loss + 2;
-			System.out.println(result);
-		}
-		else if (opponentsMove == C && myMove == Z) {
-			result += tie + 3;
-			System.out.println(result);
-		}
-		
-		return result;
-		
-	}
-	
+	static int score(char d, char e) {
+        char A = 'A'; // rock +1
+        char B = 'B'; // paper +2
+        char C = 'C'; // scissors +3
+
+        char X = 'X'; // loss +0
+        char Y = 'Y'; // draw +3
+        char Z = 'Z'; // win +6
+
+        int rock = 1;
+        int paper = 2;
+        int scissors = 3;
+
+        //int loss = 0;
+        int draw = 3;
+        int win = 6;
+
+        int result = 0;
+
+        if(d == A && e == X) {
+            result += scissors;
+            System.out.println(result);
+        }
+        else if (d == A && e == Y) {
+            result += rock + draw;
+            System.out.println(result);
+        }
+        else if (d == A && e == Z) {
+            result += paper + win;
+            System.out.println(result);
+        }
+        else if (d == B && e == X) {
+            result += rock;
+            System.out.println(result);
+        }
+        else if (d == B && e == Y) {
+            result += paper + draw;
+            System.out.println(result);
+        }
+        else if (d == B && e == Z) {
+            result += scissors + win;
+            System.out.println(result);
+        }
+        else if (d == C && e == X) {
+            result += paper;
+            System.out.println(result);
+        }
+        else if (d == C && e == Y) {
+            result += scissors + draw;
+            System.out.println(result);
+        }
+        else if (d == C && e == Z) {
+            result += rock + win;
+            System.out.println(result);
+        }
+
+        return result;
+
+    }
 	
 
 }
