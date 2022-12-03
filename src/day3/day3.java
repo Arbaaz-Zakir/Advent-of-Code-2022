@@ -72,28 +72,46 @@ public class day3 {
 		ArrayList<Character> usedChar = new ArrayList<Character>();
 		
 
-		int prioritySum = 0;
+//		int prioritySum = 0;
+//		while(scanner.hasNext()) {
+//			String line = scanner.nextLine();
+//			String compartmentOne = line.substring(0, (line.length()/2));
+//			String compartmentTwo = line.substring(line.length()/2);
+//			
+//			for(int i = 0; i < compartmentOne.length(); i++) {
+//				char s = compartmentOne.charAt(i);
+//				if(compartmentTwo.indexOf(s) > -1 && !usedChar.contains(s)) {
+//					prioritySum += letterValue.get(s);
+//					System.out.println(s+", prioritySum:"+prioritySum);
+//					usedChar.add(s);
+//				}
+//			}
+//			usedChar.clear();
+//		}
+		
+		int totalGroupSum = 0;
+		
 		while(scanner.hasNext()) {
-			String line = scanner.nextLine();
-			String compartmentOne = line.substring(0, (line.length()/2));
-			String compartmentTwo = line.substring(line.length()/2);
+			String line1 = scanner.nextLine();
+			String line2 = scanner.nextLine();
+			String line3 = scanner.nextLine();
 			
-			for(int i = 0; i < compartmentOne.length(); i++) {
-				char s = compartmentOne.charAt(i);
-				if(compartmentTwo.indexOf(s) > -1 && !usedChar.contains(s)) {
-					prioritySum += letterValue.get(s);
-					System.out.println(s+", prioritySum:"+prioritySum);
-					usedChar.add(s);
+			for(int i = 0; i < line1.length(); i++) {
+				String s = String.valueOf(line1.charAt(i));
+				if(line2.contains(s) && line3.contains(s)) {
+					totalGroupSum += letterValue.get(line1.charAt(i));
+					System.out.println(s+", group sum:"+totalGroupSum);
+					break;
 				}
 			}
-			usedChar.clear();
+			//usedChar.clear();
 		}
 		
 		
 //		System.out.println(line);
 //		System.out.println(str);
 //		System.out.println(str2);
-		System.out.println(prioritySum);
+		System.out.println(totalGroupSum);
 
 	}
 
