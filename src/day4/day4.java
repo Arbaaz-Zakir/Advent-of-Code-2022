@@ -52,14 +52,19 @@ public class day4 {
 			//System.out.println(firstPair);
 			//System.out.println(secondPair);
 			
-			
-			if(firstPair.containsAll(secondPair) || secondPair.containsAll(firstPair)) {
-				count++;
+			for(int x : firstPair) {
+				if(secondPair.contains(x)) {
+					count++;
+					break;
+				}
 			}
+//			if(firstPair.contains(secondPair) || secondPair.contains(firstPair)) {
+//				count++;
+//			}
 		}
 		
 		
-		System.out.println("In how many assignment pairs does one range fully contain the other? ANSWER: " + count);
+		System.out.println("In how many assignment pairs do the ranges overlap? ANSWER: " + count);
 
 	}
 
